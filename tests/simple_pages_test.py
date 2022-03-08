@@ -19,6 +19,31 @@ def test_request_about(client):
     assert response.status_code == 200
     assert b"About" in response.data
 
+def test_request_cicd(client):
+    """This makes the index page"""
+    response = client.get("/cicd")
+    assert response.status_code == 200
+    assert b"Cicd" in response.data
+
+def test_request_docker(client):
+    """This makes the index page"""
+    response = client.get("/docker")
+    assert response.status_code == 200
+    assert b"Docker" in response.data
+
+def test_request_github(client):
+    """This makes the index page"""
+    response = client.get("/github")
+    assert response.status_code == 200
+    assert b"Github" in response.data
+
+def test_request_pythonflask(client):
+    """This makes the index page"""
+    response = client.get("/pythonflask")
+    assert response.status_code == 200
+    assert b"Pythonflask" in response.data
+
+
 ## def test_request_page1(client):
 ##  """This makes the index page"""
 ##    response = client.get("/index")
