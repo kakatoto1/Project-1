@@ -1,23 +1,17 @@
 """This test the homepage"""
 
 
-def test_request_Home(client):
-    #   """This makes the index page"""
+def test_request_index(client):
+    """This makes the index page"""
     response = client.get("/")
     assert response.status_code == 200
+    assert b"Home" in response.data
     assert b'<a class="nav-link" href="/about">About</a>' in response.data
     assert b'<a class="nav-link" href="/index">Index</a>' in response.data
     assert b'<a class="nav-link" href="/github">Github</a>' in response.data
     assert b'<a class="nav-link" href="/docker">Docker</a>' in response.data
     assert b'<a class="nav-link" href="/cicd">CICD</a>' in response.data
     assert b'<a class="nav-link" href="/pythonflask">PythonFlask</a>' in response.data
-
-
-def test_request_index(client):
-    """This makes the index page"""
-    response = client.get("/")
-    assert response.status_code == 200
-    assert b"Home" in response.data
 
 
 def test_request_about(client):
