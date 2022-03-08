@@ -1,7 +1,7 @@
 """This test the homepage"""
 
 
-def test_request_base_links(client):
+def test_request_Home_links(client):
     #   """This makes the index page"""
     response = client.get("/")
     assert response.status_code == 200
