@@ -9,8 +9,8 @@ def test_request_main_menu_links(client):
     assert b'<a class="nav-link" href="/index">Index</a>' in response.data
     assert b'<a class="nav-link" href="/github">Github</a>' in response.data
     assert b'<a class="nav-link" href="/docker">Docker</a>' in response.data
-    assert b'<a class="nav-link" href="/cicd">Cicd</a>' in response.data
-    assert b'<a class="nav-link" href="/pythonflask">Pythonflask</a>' in response.data
+    assert b'<a class="nav-link" href="/cicd">CICD</a>' in response.data
+    assert b'<a class="nav-link" href="/pythonflask">PythonFlask</a>' in response.data
 
 
 def test_request_index(client):
