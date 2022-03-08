@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+        <title>{% block title %}{% endblock %}This is {{ name }} Website</title>
+    {% endblock %}
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <header class="mb-5">
+            <!-- As a link -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/">Home</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/github">Github</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/docker">Docker</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pythonflask">PythonFlask</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/cicd">CICD</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <img src="https://www.synopsys.com/content/dam/synopsys/sig-assets/images/cicd.svg.imgo.svg"
+                          height="60" class="col-md-20 float-md-end mb-3 ms-md-3" alt="...">
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="row">
+        <div class="col-10">
+            <p>
+                CI/CD is a process that connects development to deployment through an automated integration
+            </p>
+            <p>
+
+                process. The idea is to allow developers to push code changes as the only step needed to deploy those
+                changes.
+            </p>
+            <p>
+
+                The CI pipeline enables teamwork to progress smoothly by automating standards and ensuring software
+                quality. Tools like linters and automated tests provide feedback upon which one can merge the changes to
+                the main branch. These integrated changes eventually get shipped to the end users (production).
+            </p>
+            <p>
+
+                The CD pipeline receives the tested and approved code. It confirms that all needed artifacts are being
+                deployed to the right place. Some examples: deploying a web application on a server, publishing a
+                library to a package manager repository, or publishing a mobile app to the app store.
+            </p>
+            <p>
+
+                Automating these processes ensures two important things: the process happens fast, and the process is a
+                lot less error-prone.
+            </p>
+            <p>
+
+
+                CI/CD Flow in this project
+            </p>
+            <p>
+
+                Push a change to a feature branch.
+            </p>
+            <p>
+
+                Create a Pull Request for this change.
+            </p>
+            <p>
+
+                The CI kicks in and runs the following: Lint, Test, Build
+            </p>
+            <p>
+
+                Once the CI finishes, it marks the PR as valid and a Code Review process begins
+            </p>
+            <p>
+
+                When the PR is approved, the code is merged into master
+            </p>
+            <p>
+
+                After the merge, the CD process kicks in: Lint, Test, Bump version, Deploy
+            </p>
+            <p>
+
+                After master branch is updated, the project will use dev.yml and prod.yml file to deploy the itself to
+                Heroku, and prod.yml with use added secrets to deploy the project to Dockerhub.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+-->
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
+
