@@ -14,6 +14,16 @@
     {% endblock %}
 
 </head>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+    $(function(){
+        $('a').each(function(){
+            if ($(this).prop('href') == window.location.href) {
+                $(this).addClass('active'); $(this).parents('li').addClass('active');
+            }
+        });
+    });
+</script>
 <body>
 <div class="container">
     <div class="row">
@@ -52,179 +62,182 @@
     </div>
     <div class="row">
         <div class="col-10">
-                      <div class="container">
-  <div class="row">
-    <div class="col-sm-8" style="position:fixed; left:1200px">
-        <a href="#top">Back to top</a>
-    </div>
-  </div>
-            <p>
-                Pytest expects our tests to be in files whose names begin with test_ or end with _test.py.
-            </p>
-            <p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8" style="position:fixed; left:1200px">
+                        <a href="#top">Back to top</a>
+                    </div>
+                </div>
+                <p>
+                    Pytest expects our tests to be in files whose names begin with test_ or end with _test.py.
+                </p>
+                <p>
 
-                We need to create a file called page_test_#.py, and inside it we will write a function which should take
-                a simple page as its argument and should return a status code.
-            </p>
-            <p>
+                    We need to create a file called page_test_#.py, and inside it we will write a function which should
+                    take
+                    a simple page as its argument and should return a status code.
+                </p>
+                <p>
 
-                We also need to write a test, test a page to ensure that the function does what it says.
-            </p>
-            <p>
+                    We also need to write a test, test a page to ensure that the function does what it says.
+                </p>
+                <p>
 
-                def test_request_#(client):
-            </p>
-            <p>
+                    def test_request_#(client):
+                </p>
+                <p>
 
-                """This makes the index page"""
-            </p>
-            <p>
+                    """This makes the index page"""
+                </p>
+                <p>
 
-                response = client.get("/#")
-            </p>
-            <p>
+                    response = client.get("/#")
+                </p>
+                <p>
 
-                assert response.status_code == 200
-            </p>
-            <p>
+                    assert response.status_code == 200
+                </p>
+                <p>
 
-                assert b"#" in response.data
-            </p>
-            <p>
+                    assert b"#" in response.data
+                </p>
+                <p>
 
-                We should see that our test passes.
-            </p>
-            <p>
+                    We should see that our test passes.
+                </p>
+                <p>
 
 
-                Project outline
-            </p>
-            <p>
+                    Project outline
+                </p>
+                <p>
 
-                Project Root Folder <- Root of the project
-            </p>
-            <p>
+                    Project Root Folder <- Root of the project
+                </p>
+                <p>
 
-                docker-compose.yml <- Orchestration file that contains the configuration to develop locally, it
-                overrides the Dockerfile to run the flask development server instead of running the gunicorn server that
-                is used for hosting on Heroku
-            </p>
-            <p>
+                    docker-compose.yml <- Orchestration file that contains the configuration to develop locally, it
+                    overrides the Dockerfile to run the flask development server instead of running the gunicorn server
+                    that
+                    is used for hosting on Heroku
+                </p>
+                <p>
 
-                Dockerfile <-File used to create an image to run in a container that runs the program
-            </p>
-            <p>
+                    Dockerfile <-File used to create an image to run in a container that runs the program
+                </p>
+                <p>
 
-                Heroku.yml <- The heroku.yml file is a manifest you can use to define your Heroku app.
-            </p>
-            <p>
+                    Heroku.yml <- The heroku.yml file is a manifest you can use to define your Heroku app.
+                </p>
+                <p>
 
-                Pytest.ini <- File used to hold pytest configuration.
-            </p>
-            <p>
+                    Pytest.ini <- File used to hold pytest configuration.
+                </p>
+                <p>
 
-                Readme.md <- generate the html summary to see at the bottom of projects.
-            </p>
-            <p>
+                    Readme.md <- generate the html summary to see at the bottom of projects.
+                </p>
+                <p>
 
-                Setup.py <- The setup script is the central of all activity in building, distributing, and installing
-                modules
-                using the Distutils.
-            </p>
-            <p>
+                    Setup.py <- The setup script is the central of all activity in building, distributing, and
+                    installing
+                    modules
+                    using the Distutils.
+                </p>
+                <p>
 
-                Workflows Foldee <- .github Folder
-            </p>
-            <p>
+                    Workflows Foldee <- .github Folder
+                </p>
+                <p>
 
-                Dev.yml <- The configuration file for development workflow.
-            </p>
-            <p>
+                    Dev.yml <- The configuration file for development workflow.
+                </p>
+                <p>
 
-                Prod.yml <- The configuration file for production workflow.
-            </p>
-            <p>
+                    Prod.yml <- The configuration file for production workflow.
+                </p>
+                <p>
 
-                Controllers Folder <- App Folder
-            </p>
-            <p>
+                    Controllers Folder <- App Folder
+                </p>
+                <p>
 
-                Controller.py <- The Python controller runs a Python script when a sensor triggers the controller.
-            </p>
-            <p>
+                    Controller.py <- The Python controller runs a Python script when a sensor triggers the controller.
+                </p>
+                <p>
 
-                *_controller.py <- The controller file runs a Python script when a sensor triggers the * controller.
-            </p>
-            <p>
+                    *_controller.py <- The controller file runs a Python script when a sensor triggers the * controller.
+                </p>
+                <p>
 
-                Templates Folder <- Simple pages folder <- App Folder
-            </p>
-            <p>
+                    Templates Folder <- Simple pages folder <- App Folder
+                </p>
+                <p>
 
-                *.html <- * .html file is a HyperText Markup Language file format used as the basis of web page “*”.
-            </p>
-            <p>
+                    *.html <- * .html file is a HyperText Markup Language file format used as the basis of web page “*”.
+                </p>
+                <p>
 
-                _init_.py <- Definition of show(page) and set up 404 returning code. Any other module can add some
-                additional attributes to it.
-            </p>
-            <p>
+                    _init_.py <- Definition of show(page) and set up 404 returning code. Any other module can add some
+                    additional attributes to it.
+                </p>
+                <p>
 
-                Css Folder <- Static Folder <- App Folder
-            </p>
-            <p>
+                    Css Folder <- Static Folder <- App Folder
+                </p>
+                <p>
 
-                Style.css <- A classless stylesheet for HTML documents.
-            </p>
-            <p>
+                    Style.css <- A classless stylesheet for HTML documents.
+                </p>
+                <p>
 
-                Images Folder <- Static Folder <- App Folder
-            </p>
-            <p>
+                    Images Folder <- Static Folder <- App Folder
+                </p>
+                <p>
 
-                *.jepg <- Stored images.
-            </p>
-            <p>
+                    *.jepg <- Stored images.
+                </p>
+                <p>
 
-                Js Folder <- Static Folder <- App Folder
-            </p>
-            <p>
+                    Js Folder <- Static Folder <- App Folder
+                </p>
+                <p>
 
-                Scripts.js <- JS (JavaScript) file contains JavaScript code for execution on web pages.
-            </p>
-            <p>
+                    Scripts.js <- JS (JavaScript) file contains JavaScript code for execution on web pages.
+                </p>
+                <p>
 
-                Templates Folder <- App Folder
-            </p>
-            <p>
+                    Templates Folder <- App Folder
+                </p>
+                <p>
 
-                _init_.py <- Definition of create_app, any other module can add some additional attributes to it.
-            </p>
-            <p>
+                    _init_.py <- Definition of create_app, any other module can add some additional attributes to it.
+                </p>
+                <p>
 
-                Run.py <- Import create_app, any other module can add some additional attributes to it.
-            </p>
-            <p>
+                    Run.py <- Import create_app, any other module can add some additional attributes to it.
+                </p>
+                <p>
 
-                External Libraries Folder <- Contains pieces of pre-written code that is easy to implement.
-            </p>
+                    External Libraries Folder <- Contains pieces of pre-written code that is easy to implement.
+                </p>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Optional JavaScript; choose one of the two! -->
+    <!-- Optional JavaScript; choose one of the two! -->
 
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
 
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
--->
-<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
 
