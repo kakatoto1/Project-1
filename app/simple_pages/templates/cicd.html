@@ -14,6 +14,17 @@
     {% endblock %}
 
 </head>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+    $(function () {
+        $('a').each(function () {
+            if ($(this).prop('href') == window.location.href) {
+                $(this).addClass('active');
+                $(this).parents('li').addClass('active');
+            }
+        });
+    });
+</script>
 <body>
 <div class="container">
     <div class="row">
@@ -33,105 +44,188 @@
 
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/github">Github</a>
+                                <a class="nav-link" href="/github">Pylint</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/docker">Docker</a>
+                                <a class="nav-link" href="/docker">AAATesting</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/pythonflask">PythonFlask</a>
+                                <a class="nav-link" href="/pythonflask">OOPS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/cicd">CICD</a>
+                                <a class="nav-link" href="/cicd">SOLID</a>
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="clearfix">
-                    <img src="https://www.synopsys.com/content/dam/synopsys/sig-assets/images/cicd.svg.imgo.svg"
-                          height="60" class="col-md-20 float-md-end mb-3 ms-md-3" alt="...">
                 </div>
             </nav>
         </header>
     </div>
     <div class="row">
         <div class="col-10">
-            <p>
-                CI/CD is a process that connects development to deployment through an automated integration
-            </p>
-            <p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8" style="position:fixed; left:1700px">
+                        <a href="#top">Back to top</a>
+                    </div>
 
-                process. The idea is to allow developers to push code changes as the only step needed to deploy those
-                changes.
-            </p>
-            <p>
+                </div>
+                <p>
+                    SOLID is a mnemonic abbreviation for a set of design principles created for software development in
+                    object-oriented languages. The principles in SOLID are intended to foster simpler, more robust and
+                    updatable code from software developers. Each letter in SOLID corresponds to a principle for
+                    development.
+                </p>
+                <p>
+                    The SOLID principles are:
+                </p>
+                <p>
+                    The Single-Responsibility Principle (SRP)
+                </p>
+                <p>
+                    The Open-Closed Principle (OCP)
+                </p>
+                <p>
+                    The Liskov Substitution Principle (LSP)
+                </p>
+                <p>
+                    The Interface Segregation Principle (ISP)
+                </p>
+                <p>
+                    The Dependency inversion Principle (DIP)
+                </p>
+                <p>
+                    &nbsp;
 
-                The CI pipeline enables teamwork to progress smoothly by automating standards and ensuring software
-                quality. Tools like linters and automated tests provide feedback upon which one can merge the changes to
-                the main branch. These integrated changes eventually get shipped to the end users (production).
-            </p>
-            <p>
+                </p>
+                <p>
+                    1.Single Responsibility Principle
+                </p>
+                <p>
+                    The Single Responsibility Principle requires that a class should have only one job. So if a class
+                    has more than one responsibility, it becomes coupled. A change to one responsibility results to
+                    modification of the other responsibility.
+                </p>
+                <p>
+                    class Calculator:
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;result = 0
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;ata = []
+                </p>
+                <p>
+                    We have a Calculator class which is responsible for handling calculator operations only.
+                </p>
+                <p>
+                    &nbsp;
 
-                The CD pipeline receives the tested and approved code. It confirms that all needed artifacts are being
-                deployed to the right place. Some examples: deploying a web application on a server, publishing a
-                library to a package manager repository, or publishing a mobile app to the app store.
-            </p>
-            <p>
+                </p>
+                <p>
+                    2.Open-Closed Principle
+                </p>
+                <p>
+                    Software entities(Classes, modules, functions) should be open for extension, not modification.
+                </p>
+                <p>
+                    In other words: You should not need to modify the code you have already written to accommodate new
+                    functionality, but simply add what you now need.
+                </p>
+                <p>
+                    This does not mean that you cannot change your code when the code premises needs to be modified, but
+                    that if you need to add new functions similar to the one present, you should not require to change
+                    other parts of the code.
+                </p>
+                <p>
+                    &nbsp;
 
-                Automating these processes ensures two important things: the process happens fast, and the process is a
-                lot less error-prone.
-            </p>
-            <p>
+                </p>
+                <p>
+                    3.Liskov Substitution Principle
+                </p>
+                <p>
+                    The main idea behind Liskov Subtitution Principle is that, for any class, a client should be able to
+                    use any of its subtypes indistinguishably, without even noticing, and therefore without compromising
+                    the expected behavior at runtime. This means that clients are completely isolated and unaware of
+                    changes in the class hierarchy.
+                </p>
+                <p>
+                    Alternatively, this can be expressed as “Derived classes must be substitutable for their base
+                    classes”.
+                </p>
+                <p>
+                    In (maybe) simpler words, if a subclass redefines a function also present in the parent class, a
+                    client-user should not be noticing any difference in behavior, and it is a substitute for the base
+                    class.
+                </p>
+                <p>
+                    &nbsp;
 
+                </p>
+                <p>
+                    4.Interface Segregation Principle
+                </p>
+                <p>
+                    Make fine grained interfaces that are client specific Clients should not be forced to depend upon
+                    interfaces that they do not use. This principle deals with the disadvantages of implementing big
+                    interfaces.
+                </p>
+                <p>
+                    In the contest of classes, an interface is considered, all the methods and properties “exposed”,
+                    thus, everything that a user can interact with that belongs to that class.
+                </p>
+                <p>
+                    In this sense, the IS principles tell us that a class should only have the interface needed (SRP)
+                    and avoid methods that won’t work or that have no reason to be part of that class.
+                </p>
+                <p>
+                    This problem arises, primarily, when, a subclass inherits methods from a base class that it does not
+                    need.
+                </p>
+                <p>
+                    &nbsp;
 
-                CI/CD Flow in this project
-            </p>
-            <p>
+                </p>
+                <p>
+                    5.Dependecy Inversion Principle
+                </p>
+                <p>
+                    Dependency should be on abstractions not concretions. High-level modules should not depend upon
+                    low-level modules. Both low and high level classes should depend on the same abstractions.
+                    Abstractions should not depend on details. Details should depend upon abstractions.
+                </p>
+                <p>
+                    There comes a point in software development where our app will be largely composed of modules. When
+                    this happens, we have to clear things up by using dependency injection. High-level components
+                    depending on low-level components to function. To create specific behavior you can use techniques
+                    like inheritance or interfaces.
+                </p>
+                <p>
+                    &nbsp;
 
-                Push a change to a feature branch.
-            </p>
-            <p>
+                </p>
+                <p>
+                    Reference：https://towardsdatascience.com/solid-coding-in-python-1281392a6a94
 
-                Create a Pull Request for this change.
-            </p>
-            <p>
-
-                The CI kicks in and runs the following: Lint, Test, Build
-            </p>
-            <p>
-
-                Once the CI finishes, it marks the PR as valid and a Code Review process begins
-            </p>
-            <p>
-
-                When the PR is approved, the code is merged into master
-            </p>
-            <p>
-
-                After the merge, the CD process kicks in: Lint, Test, Bump version, Deploy
-            </p>
-            <p>
-
-                After master branch is updated, the project will use dev.yml and prod.yml file to deploy the itself to
-                Heroku, and prod.yml with use added secrets to deploy the project to Dockerhub.
-            </p>
+                </p>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Optional JavaScript; choose one of the two! -->
+    <!-- Optional JavaScript; choose one of the two! -->
 
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
 
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
--->
-<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
 

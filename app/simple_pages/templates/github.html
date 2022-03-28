@@ -14,6 +14,17 @@
     {% endblock %}
 
 </head>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+    $(function () {
+        $('a').each(function () {
+            if ($(this).prop('href') == window.location.href) {
+                $(this).addClass('active');
+                $(this).parents('li').addClass('active');
+            }
+        });
+    });
+</script>
 <body>
 <div class="container">
     <div class="row">
@@ -33,181 +44,83 @@
 
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/github">Github</a>
+                                <a class="nav-link" href="/github">Pylint</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/docker">Docker</a>
+                                <a class="nav-link" href="/docker">AAATesting</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/pythonflask">PythonFlask</a>
+                                <a class="nav-link" href="/pythonflask">OOPS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/cicd">CICD</a>
+                                <a class="nav-link" href="/cicd">SOLID</a>
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="clearfix">
-                    <img src="https://logos-world.net/wp-content/uploads/2020/11/GitHub-Logo.png"  height="50"
-                         class="col-md-20 float-md-end mb-3 ms-md-3" alt="...">
                 </div>
             </nav>
         </header>
 
         <div class="row">
             <div class="col-10">
-                <p>
-                    Basic Github Concept and Command
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8" style="position:fixed; left:1700px">
+                            <a href="#top">Back to top</a>
+                        </div>
+                    </div>
+                    <p>
+                        What is Pylint?
+                    </p>
+                    <p>
+                        It is a static code analysis tool to identify errors in Python code and helps programmers
+                        enforce good coding style. This tool enables them debugging complex code with less manual work.
+                    </p>
+                    <p>
+                        It is one of the tools which gets used for test-driven development (TDD).
+                    </p>
+                    <p>
+                        The coding style that Pylint applies to the code is known as PEP8.
+                    </p>
+                    <p>
+                        It is a must-have tool for every beginner as well as advanced users as it scans and rates
+                        programs with a score according to the rules outlined in the PEP8 Style Guide.
+                    </p>
+                    <p>
+                        How to use Pylint?
+                    </p>
+                    <p>
+                        The command to use pylint on a python file is: pylint filename.py
+                    </p>
+                    <p>
+                        It returns output consisting of semantic errors, syntax errors, errors in coding style, bugs in
+                        the code, excessive and redundant code, etc. It also assigns a score that indicates whether the
+                        python code is an ideal one to use and maintains a history of scores obtained while running over
+                        a python file as well as after each edit.
+                    </p>
+                    <p>
+                             &nbsp;
                 </p>
                 <p>
-                    Branch
-                </p>
-                <p>
-
-                    Branching is a feature available in most modern version control systems. Branching in other VCS's
-                    can be an expensive operation in both time and disk space. In Git, branches are a part of your
-                    everyday development process. Git branches are effectively a pointer to a snapshot of your changes.
-                    When you want to add a new feature or fix a bug—no matter how big or how small—you spawn a new
-                    branch to encapsulate your changes. This makes it harder for unstable code to get merged into the
-                    main code base, and it gives you the chance to clean up your future's history before merging it into
-                    the main branch.
-                </p>
-                <p>
-
-                    Merge
-                </p>
-                <p>
-
-                    Git merge will combine multiple sequences of commits into one unified history. In the most frequent
-                    use cases, git merge is used to combine two branches. The following examples in this document will
-                    focus on this branch merging pattern. In these scenarios, git merge takes two commit pointers,
-                    usually the branch tips, and will find a common base commit between them. Once Git finds a common
-                    base commit it will create a new "merge commit" that combines the changes of each queued merge
-                    commit sequence.
-                </p>
-                <p>
-
-                    Say we have a new branch feature that is based off the main branch. We now want to merge this
-                    feature branch into main.
-                </p>
-                <p>
-
-                    Invoking this command will merge the specified branch feature into the current branch, we'll assume
-                    main. Git will determine the merge algorithm automatically.
-                </p>
-                <p>
-
-                    Commit
-                </p>
-                <p>
-
-                    The git commit command captures a snapshot of the project's currently staged changes. Committed
-                    snapshots can be thought of as “safe” versions of a project—Git will never change them unless you
-                    explicitly ask it to. Prior to the execution of git commit, the git add command is used to promote
-                    or 'stage' changes to the project that will be stored in a commit. These two commands git commit and
-                    git add are two of the most frequently used.
-                </p>
-                <p>
-
-                    Tags
-                </p>
-                <p>
-
-                    Tags are ref's that point to specific points in Git history. Tagging is generally used to capture a
-                    point in history that is used for a marked version release (i.e. v1.0.1). A tag is like a branch
-                    that doesn’t change. Unlike branches, tags, after being created, have no further history of commits.
-                    For more info on branches visit the git branch page. This document will cover the different kind of
-                    tags, how to create tags, listing all tags, deleting tags, sharing tags, and more.
-                </p>
-                <p>
-
-                    Creating a tag
-                </p>
-                <p>
-
-                    To create a new tag execute the following command: git tag
-                    <tagname>
-                </p>
-                <p>
-
-                    Listing Tags
-                </p>
-                <p>
-
-                    To list stored tags in a repo execute the following: git tag
-                </p>
-                <p>
-
-                    Sharing: Pushing Tags to Remote
-                </p>
-                <p>
-
-                    Sharing tags is similar to pushing branches. By default, git push will not push tags. Tags have to
-                    be explicitly passed to git push.
-                </p>
-                <p>
-
-                    Checking Out Tags
-                </p>
-                <p>
-
-                    You can view the state of a repo at a tag by using the git checkout command.
-                </p>
-                <p>
-
-                    Deleting Tags
-                </p>
-                <p>
-
-                    Deleting tags is a straightforward operation. Passing the -d option and a tag identifier to git tag
-                    will delete the identified tag.
-                </p>
-                <p>
-
-                    Repositories
-                </p>
-                <p>
-
-                    Repositories in GIT contain a collection of files of various versions of a Project. These files are
-                    imported from the repository into the local server of the user for further updates and modifications
-                    in the content of the file. A VCS or the Version Control System is used to create these versions and
-                    store them in a specific place termed as a repository. The process of copying the content from an
-                    existing Git Repository with the help of various Git Tools is termed as cloning. Once the cloning
-                    process is done, the user gets the complete repository on his local machine. Git by default assumes
-                    the work to be done on the repository is as a user once the cloning is done.
-                </p>
-                <p>
-
-                    Users can also create a new repository or delete an existing repository. To delete a repository, the
-                    simpler way is to just delete the folder containing the repository.
-                </p>
-                <p>
-
-                    Git allows the users to perform operations on the Repositories by cloning them on the local machine.
-                    This will result in the creation of various copies of the project. These copies are stored on the
-                    local machine and hence, the users will not be able to sync their changes with other developers. To
-                    overcome this problem, Git allows performing syncing of these local repositories with the remote
-                    repositories.
-
-                </p>
-
+                        Reference: https://www.techbeamers.com/pylint-tool/
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+        <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-</body>
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        -->
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
 </html>
 

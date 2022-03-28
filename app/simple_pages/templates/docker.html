@@ -14,6 +14,17 @@
     {% endblock %}
 
 </head>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+    $(function () {
+        $('a').each(function () {
+            if ($(this).prop('href') == window.location.href) {
+                $(this).addClass('active');
+                $(this).parents('li').addClass('active');
+            }
+        });
+    });
+</script>
 <body>
 <div class="container">
     <div class="row">
@@ -33,254 +44,171 @@
 
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/github">Github</a>
+                                <a class="nav-link" href="/github">Pylint</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/docker">Docker</a>
+                                <a class="nav-link" href="/docker">AAATesting</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/pythonflask">PythonFlask</a>
+                                <a class="nav-link" href="/pythonflask">OOPS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/cicd">CICD</a>
+                                <a class="nav-link" href="/cicd">SOLID</a>
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="clearfix">
-                    <img src="https://www.pinclipart.com/picdir/big/331-3317152_from-docker-images-docker-container-docker-engine-logo.png"
-                          height="50" class="col-md-20 float-md-end mb-3 ms-md-3" alt="...">
                 </div>
             </nav>
         </header>
     </div>
     <div class="row">
         <div class="col-10">
-            <p>
-                What is Docker?
-            </p>
-            <p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8" style="position:fixed; left:1700px">
+                        <a href="#top">Back to top</a>
+                    </div>
+                </div>
 
-                Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver
-                software in packages called containers.[6] The service has both free and premium tiers. The software
-                that hosts the containers is called Docker Engine.
-            </p>
-            <p>
-
-                Container
-            </p>
-            <p>
-
-                A container is a standard unit of software that packages up code and all its dependencies, so the
-                application runs quickly and reliably from one computing environment to another. A Docker container
-                image is a lightweight, standalone, executable package of software that includes everything needed to
-                run an application: code, runtime, system tools, system libraries and settings.
-            </p>
-            <p>
-
-                Container images become containers at runtime and in the case of Docker containers - images become
-                containers when they run on Docker Engine. Available for both Linux and Windows-based applications,
-                containerized software will always run the same, regardless of the infrastructure. Containers isolate
-                software from its environment and ensure that it works uniformly despite differences for instance
-                between development and staging.
-            </p>
-            <p>
-
-                Images
-            </p>
-            <p>
-
-                A Docker image is a file used to execute code in a Docker container. Docker images act as a set of
-                instructions to build a Docker container, like a template. Docker images also act as the starting point
-                when using Docker. An image is comparable to a snapshot in virtual machine (VM) environments.
-            </p>
-            <p>
-
-                Docker is used to create, run and deploy applications in containers. A Docker image contains application
-                code, libraries, tools, dependencies, and other files needed to make an application run. When a user
-                runs an image, it can become one of many instances of a container.
-            </p>
-            <p>
-
-                Docker images can be created through either an interactive or Dockerfile method.
-            </p>
-            <p>
-
-                Interactive method
-            </p>
-            <p>
-
-                With this method, users run a container from an existing Docker image and manually make any needed
-                changes to the environment before saving the image. The interactive method is the easiest way to create
-                docker images. The first step is to launch Docker and open a terminal session. Then use the Docker run
-                command image_name:tag_name. This starts a shell session with the container that was launched from the
-                image. If the tag name is omitted, Docker uses the most recent version of the image. After this, the
-                image should appear listed in results.
-            </p>
-            <p>
-
-                Dockerfile method
-            </p>
-            <p>
-
-                This approach requires making a plain text Dockerfile. The Dockerfile makes the specifications for
-                creating an image. This process is more difficult and time-consuming, but it does well in continuous
-                delivery environments. The method includes creating the Dockerfile and adding the commands needed for
-                the image. Once the Dockerfile is started, the user sets up a .dockerignore file to exclude any files
-                not needed for the final build. The .dockerignore file is in the root directory. Next, the Docker build
-                command is used to create a Docker image and an image name and tag are set. Lastly, the Docker images
-                command is used to see the created image.
-            </p>
-            <p>
-
-                Repositories
-            </p>
-            <p>
-
-                Docker Hub repositories allow you share container images with your team, customers, or the Docker
-                community at large.
-            </p>
-            <p>
-
-                Docker images are pushed to Docker Hub through the docker push command. A single Docker Hub repository
-                can hold many Docker images (stored as tags).
-            </p>
-            <p>
-
-                To create a repository, sign into Docker Hub, click on Repositories then Create Repository
-            </p>
-            <p>
-
-                When creating a new repository: You can choose to put it in your Docker ID namespace, or in any
-                organization where you are an owner.
-            </p>
-            <p>
-
-                Pushing a Docker container image to Docker Hub
-            </p>
-            <p>
-
-                To push an image to Docker Hub, you must first name your local image using your Docker Hub username and
-                the repository name that you created through Docker Hub on the web.
-            </p>
-            <p>
-
-                You can add multiple images to a repository by adding a specific :
-                <tag> to them (for example docs/base:testing). If it’s not specified, the tag defaults to latest.
-            </p>
-            <p>
-
-                Basic Docker Command
-            </p>
-            <p>
-
-                Command Description
-            </p>
-            <p>
-
-                docker attach Attach local standard input, output, and error streams to a running container
-            </p>
-            <p>
-
-                docker build Build an image from a Dockerfile
-            </p>
-            <p>
-
-                docker builder Manage builds
-            </p>
-            <p>
-
-                docker commit Create a new image from a container’s changes
-            </p>
-            <p>
-
-                docker config Manage Docker configs
-            </p>
-            <p>
-
-                docker container Manage containers
-            </p>
-            <p>
-
-                docker create Create a new container
-            </p>
-            <p>
-
-                docker image Manage images
-            </p>
-            <p>
-
-                docker images List images
-            </p>
-            <p>
-
-                docker logs Fetch the logs of a container
-            </p>
-            <p>
-
-                docker ps List containers
-            </p>
-            <p>
-
-                docker pull Pull an image or a repository from a registry
-            </p>
-            <p>
-
-                docker push Push an image or a repository to a registry
-            </p>
-            <p>
-
-                docker rename Rename a container
-            </p>
-            <p>
-
-                docker rm Remove one or more containers
-            </p>
-            <p>
-
-                docker run Run a command in a new container
-            </p>
-            <p>
-
-                docker save Save one or more images to a tar archive (streamed to STDOUT by default)
-            </p>
-            <p>
-
-                docker start Start one or more stopped containers
-            </p>
-            <p>
-
-                docker stats Display a live stream of container(s) resource usage statistics
-            </p>
-            <p>
-
-                docker stop Stop one or more running containers
-            </p>
-            <p>
-
-                docker tag Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
-            </p>
-            <p>
-
-                docker version Show the Docker version information
-            </p>
+                <p>
+                    What is AAA unit testing?
+                </p>
+                <p>
+                    The AAA (Arrange, Act, Assert) pattern is a common way of writing unit tests for a method under
+                    test. The Arrange section of a unit test method initializes objects and sets the value of the data
+                    that is passed to the method under test.
+                </p>
+                <p>
+                    Arrange: This is the first step of a unit test application. Here we will arrange the test, in other
+                    words we will do the necessary setup of the test. For example, to perform the test we need to create
+                    an object of the targeted class, if necessary, then we need to create mock objects and other
+                    variable initialization, something like this.
+                </p>
+                <p>
+                    Act: This is the middle step of a unit step application. In this step we will execute the test. In
+                    other words we will do the actual unit testing and the result will be obtained from the test
+                    application. Basically we will call the targeted function in this step using the object that we
+                    created in the previous step.
+                </p>
+                <p>
+                    Assert: This is the last step of a unit test application. In this step we will check and verify the
+                    returned result with expected results.
+                </p>
+                <p>
+                    Below is the simple pattern in the structure of every unit test. The following is a Calculator class
+                    with a single method which calculates a sum of two numbers:
+                </p>
+                <p>
+                    public class Calculator
+                </p>
+                <p>
+                    {
+                </p>
+                <p>
+                    &nbsp;&nbsp;public double Sum(double first, double second)
+                </p>
+                <p>
+                    &nbsp;&nbsp;{
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return first + second;
+                </p>
+                <p>
+                    &nbsp;&nbsp;}
+                </p>
+                <p>
+                    }
+                </p>
+                <p>
+                    Below shows a test that verifies the class’s behavior. This test exhibits the Arrange-Act-Assert
+                    pattern. It’s also called the 3A pattern because there are three “A”s: Arrange, Act, and Assert.
+                </p>
+                <p>
+                    public class CalculatorTests (1)
+                </p>
+                <p>
+                    {
+                </p>
+                <p>
+                    &nbsp;&nbsp;[Fact] (2)
+                </p>
+                <p>
+                    &nbsp;&nbsp;public void Sum_of_two_numbers() (3)
+                </p>
+                <p>
+                    &nbsp;&nbsp;{
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Arrange
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;double first = 10; (4)
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;double second = 20; (4)
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;var calculator = new Calculator(); (4)
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Act
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;double result = calculator.Sum(first, second); (5)
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// Assert
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Assert.Equal(30, result); (6)
+                </p>
+                <p>
+                    &nbsp;&nbsp;}
+                </p>
+                <p>
+                    }
+                </p>
+                <p>
+                    1 Class-container for a cohesive set of tests
+                </p>
+                <p>
+                    2 xUnit’s attribute indicating a test
+                </p>
+                <p>
+                    3 Name of the unit test
+                </p>
+                <p>
+                    4 Arrange section
+                </p>
+                <p>
+                    5 Act section
+                </p>
+                <p>
+                    6 Assert section
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    Reference：https://freecontent.manning.com/making-better-unit-tests-part-1-the-aaa-pattern/
+                </p>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Optional JavaScript; choose one of the two! -->
+    <!-- Optional JavaScript; choose one of the two! -->
 
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
 
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
--->
-<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
 
